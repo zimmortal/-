@@ -37,6 +37,8 @@
  *       12abc-abCABc-4aB@
  * 输出:
  *       12abc-abc-ABC-4aB-@
+ *
+ *       https://leetcode.cn/circle/discuss/niKSMZ/
  * Encode: UTF-8
  * CreateTime: 2024/8/8 16:55
  */
