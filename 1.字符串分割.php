@@ -94,9 +94,20 @@ function transformString($K, $S): string
 }
 
 // 读取输入
-$K = (int)trim(fgets(STDIN));
-$S = trim(fgets(STDIN));
+// 检查是否在命令行模式下运行
+if (PHP_SAPI === "cli") {
+    // 读取输入
+    if ($argc > 2) {
+        $K = (int)$argv[1];
+        $S = $argv[2];
+    } else {
+        $K = (int)trim(fgets(STDIN));
+        $S = trim(fgets(STDIN));
+    }
 
-// 输出转换后的字符串
-echo transformString($K, $S) . PHP_EOL;
+    // 输出转换后的字符串
+    echo transformString($K, $S) . PHP_EOL;
+} else {
+    echo "请在命令行模式下运行此脚本。\n";
+}
 
