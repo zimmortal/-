@@ -53,11 +53,13 @@ function processSubstring($substring): string
 
     if ($lowerCount > $upperCount) {
         return strtolower($substring);
-    } elseif ($upperCount > $lowerCount) {
-        return strtoupper($substring);
-    } else {
-        return $substring;
     }
+
+    if ($upperCount > $lowerCount) {
+        return strtoupper($substring);
+    }
+
+    return $substring;
 }
 
 /**
